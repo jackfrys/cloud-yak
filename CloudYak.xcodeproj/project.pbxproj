@@ -14,6 +14,7 @@
 		8530BDD51F2AFB97008B83AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8530BDD31F2AFB97008B83AD /* LaunchScreen.storyboard */; };
 		8530BDE01F2AFB97008B83AD /* CloudYakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530BDDF1F2AFB97008B83AD /* CloudYakTests.swift */; };
 		8530BDEB1F2AFB97008B83AD /* CloudYakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530BDEA1F2AFB97008B83AD /* CloudYakUITests.swift */; };
+		8530BDFB1F2AFCD1008B83AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8530BDFA1F2AFCD1008B83AD /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		8530BDEA1F2AFB97008B83AD /* CloudYakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudYakUITests.swift; sourceTree = "<group>"; };
 		8530BDEC1F2AFB97008B83AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8530BDF81F2AFC4A008B83AD /* CloudYak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudYak.entitlements; sourceTree = "<group>"; };
+		8530BDFA1F2AFCD1008B83AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8530BDFB1F2AFCD1008B83AD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 				8530BDDE1F2AFB97008B83AD /* CloudYakTests */,
 				8530BDE91F2AFB97008B83AD /* CloudYakUITests */,
 				8530BDC81F2AFB97008B83AD /* Products */,
+				8530BDF91F2AFCD1008B83AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +129,14 @@
 				8530BDEC1F2AFB97008B83AD /* Info.plist */,
 			);
 			path = CloudYakUITests;
+			sourceTree = "<group>";
+		};
+		8530BDF91F2AFCD1008B83AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8530BDFA1F2AFCD1008B83AD /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
