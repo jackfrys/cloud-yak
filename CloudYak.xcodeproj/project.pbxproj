@@ -47,6 +47,7 @@
 		8530BDE61F2AFB97008B83AD /* CloudYakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudYakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8530BDEA1F2AFB97008B83AD /* CloudYakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudYakUITests.swift; sourceTree = "<group>"; };
 		8530BDEC1F2AFB97008B83AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8530BDF81F2AFC4A008B83AD /* CloudYak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudYak.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		8530BDC91F2AFB97008B83AD /* CloudYak */ = {
 			isa = PBXGroup;
 			children = (
+				8530BDF81F2AFC4A008B83AD /* CloudYak.entitlements */,
 				8530BDCA1F2AFB97008B83AD /* AppDelegate.swift */,
 				8530BDCC1F2AFB97008B83AD /* ViewController.swift */,
 				8530BDCE1F2AFB97008B83AD /* Main.storyboard */,
@@ -195,6 +197,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Q6ETBD25S7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					8530BDDA1F2AFB97008B83AD = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -417,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudYak/CloudYak.entitlements;
 				DEVELOPMENT_TEAM = Q6ETBD25S7;
 				INFOPLIST_FILE = CloudYak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -430,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudYak/CloudYak.entitlements;
 				DEVELOPMENT_TEAM = Q6ETBD25S7;
 				INFOPLIST_FILE = CloudYak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
