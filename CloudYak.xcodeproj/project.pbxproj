@@ -14,7 +14,8 @@
 		8530BDD51F2AFB97008B83AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8530BDD31F2AFB97008B83AD /* LaunchScreen.storyboard */; };
 		8530BDE01F2AFB97008B83AD /* CloudYakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530BDDF1F2AFB97008B83AD /* CloudYakTests.swift */; };
 		8530BDEB1F2AFB97008B83AD /* CloudYakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530BDEA1F2AFB97008B83AD /* CloudYakUITests.swift */; };
-		8530BDFB1F2AFCD1008B83AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8530BDFA1F2AFCD1008B83AD /* CloudKit.framework */; };
+		8530BDFD1F2AFD4D008B83AD /* YakModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8530BDFC1F2AFD4D008B83AD /* YakModel.swift */; };
+		8530BDFF1F2B0EEA008B83AD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8530BDFE1F2B0EEA008B83AD /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,8 @@
 		8530BDEA1F2AFB97008B83AD /* CloudYakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudYakUITests.swift; sourceTree = "<group>"; };
 		8530BDEC1F2AFB97008B83AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8530BDF81F2AFC4A008B83AD /* CloudYak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudYak.entitlements; sourceTree = "<group>"; };
-		8530BDFA1F2AFCD1008B83AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		8530BDFC1F2AFD4D008B83AD /* YakModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YakModel.swift; sourceTree = "<group>"; };
+		8530BDFE1F2B0EEA008B83AD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8530BDFB1F2AFCD1008B83AD /* CloudKit.framework in Frameworks */,
+				8530BDFF1F2B0EEA008B83AD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,7 @@
 				8530BDF81F2AFC4A008B83AD /* CloudYak.entitlements */,
 				8530BDCA1F2AFB97008B83AD /* AppDelegate.swift */,
 				8530BDCC1F2AFB97008B83AD /* ViewController.swift */,
+				8530BDFC1F2AFD4D008B83AD /* YakModel.swift */,
 				8530BDCE1F2AFB97008B83AD /* Main.storyboard */,
 				8530BDD11F2AFB97008B83AD /* Assets.xcassets */,
 				8530BDD31F2AFB97008B83AD /* LaunchScreen.storyboard */,
@@ -134,7 +137,7 @@
 		8530BDF91F2AFCD1008B83AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8530BDFA1F2AFCD1008B83AD /* CloudKit.framework */,
+				8530BDFE1F2B0EEA008B83AD /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,14 +205,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Jack Frysinger";
 				TargetAttributes = {
 					8530BDC61F2AFB97008B83AD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Q6ETBD25S7;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -218,12 +225,14 @@
 					8530BDDA1F2AFB97008B83AD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Q6ETBD25S7;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8530BDC61F2AFB97008B83AD;
 					};
 					8530BDE51F2AFB97008B83AD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Q6ETBD25S7;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8530BDC61F2AFB97008B83AD;
 					};
@@ -282,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8530BDCD1F2AFB97008B83AD /* ViewController.swift in Sources */,
+				8530BDFD1F2AFD4D008B83AD /* YakModel.swift in Sources */,
 				8530BDCB1F2AFB97008B83AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +357,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -355,7 +367,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -398,7 +414,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -406,7 +424,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -442,7 +464,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfrysinger.CloudYak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -456,7 +479,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfrysinger.CloudYak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -470,7 +494,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfrysinger.CloudYakTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudYak.app/CloudYak";
 			};
 			name = Debug;
@@ -485,7 +510,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfrysinger.CloudYakTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudYak.app/CloudYak";
 			};
 			name = Release;
@@ -499,7 +525,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfrysinger.CloudYakUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = CloudYak;
 			};
 			name = Debug;
@@ -513,7 +540,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackfrysinger.CloudYakUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = CloudYak;
 			};
 			name = Release;
@@ -537,6 +565,7 @@
 				8530BDF11F2AFB97008B83AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8530BDF21F2AFB97008B83AD /* Build configuration list for PBXNativeTarget "CloudYakTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +574,7 @@
 				8530BDF41F2AFB97008B83AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8530BDF51F2AFB97008B83AD /* Build configuration list for PBXNativeTarget "CloudYakUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +583,7 @@
 				8530BDF71F2AFB97008B83AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
