@@ -36,7 +36,7 @@ class YakModel : NSObject, CLLocationManagerDelegate {
     }
     
     public func refreshYaks() {
-        let query = CKQuery(recordType: "Yaks", predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: "Yak", predicate: NSPredicate(value: true))
         publicDb.perform(query, inZoneWith: nil) {results, error in
             if let r = results {
                 self.recentResults = r.map({$0.object(forKey: "text") as! String})
@@ -49,7 +49,7 @@ class YakModel : NSObject, CLLocationManagerDelegate {
     
     public func postYak(message: String) {
         if let l = locationManager.location {
-            let type = CKRecord(recordType: "Yaks")
+            let type = CKRecord(recordType: "Yak")
             type.setValue(message, forKey: "text")
             type.setObject(l, forKey: "location")
             self.publicDb.save(type) {record, error in

@@ -41,7 +41,7 @@ class ViewController: UIViewController, YakModelDelegate, UITableViewDataSource 
     
     func didRefreshYaks() {
         yaks = model.recentResults
-        tableView.reloadData()
+        tableView.performSelector(onMainThread: #selector(tableView.reloadData), with: nil, waitUntilDone: false)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
