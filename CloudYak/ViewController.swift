@@ -8,9 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, YakModelDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
+class ViewController: UITableViewController, YakModelDelegate {
     
     let model = YakModel()
     
@@ -46,17 +44,18 @@ class ViewController: UIViewController, YakModelDelegate, UITableViewDataSource 
     func didRefreshYaks() {
         yaks = model.recentResults
         tableView.performSelector(onMainThread: #selector(tableView.reloadData), with: nil, waitUntilDone: false)
+        self.refreshControl?.performSelector(onMainThread: #selector(refreshControl?.endRefreshing), with: nil, waitUntilDone: false)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return yaks.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let content = yaks[indexPath.row]
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         cell.textLabel?.text = content
