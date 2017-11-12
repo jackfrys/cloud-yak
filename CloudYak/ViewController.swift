@@ -31,6 +31,10 @@ class ViewController: UIViewController, YakModelDelegate, UITableViewDataSource 
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func refreshYaks(_ sender: Any) {
+        model.refreshYaks()
+    }
+    
     @IBAction func addYak(_ sender: Any) {
         let alert = UIAlertController(title: "Enter your message", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         var text = UITextField()

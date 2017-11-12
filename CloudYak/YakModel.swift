@@ -36,13 +36,16 @@ class YakModel : NSObject, CLLocationManagerDelegate {
     }
     
     public func refreshYaks() {
-        let query = CKQuery(recordType: "Yak", predicate: NSPredicate(value: true))
-        publicDb.perform(query, inZoneWith: nil) {results, error in
-            if let r = results {
-                self.recentResults = r.map({$0.object(forKey: "text") as! String})
-                self.delegate?.didRefreshYaks()
-            } else {
-                self.delegate?.failedToRefreshYaks()
+        if let l = locationManager.location {
+            let locationPredicate = NSPredicate(format: "distanceToLocation:fromLocation:(%K,%@) < %f", "location", l, 1.0)
+            let query = CKQuery(recordType: "Yak", predicate: locationPredicate)
+            publicDb.perform(query, inZoneWith: nil) {results, error in
+                if let r = results {
+                    self.recentResults = r.map({$0.object(forKey: "text") as! String})
+                    self.delegate?.didRefreshYaks()
+                } else {
+                    self.delegate?.failedToRefreshYaks()
+                }
             }
         }
     }
