@@ -42,6 +42,10 @@ class YakModel : NSObject, CLLocationManagerDelegate {
             publicDb.perform(query, inZoneWith: nil) {results, error in
                 if let r = results {
                     self.recentResults = r.map({$0.object(forKey: "text") as! String})
+                    if self.recentResults.count == 0 {
+                        self.recentResults.append("sample first")
+                        self.recentResults.append("sample second")
+                    }
                     self.delegate?.didRefreshYaks()
                 } else {
                     self.delegate?.failedToRefreshYaks()
